@@ -10,26 +10,29 @@ import Foundation
 import Alamofire
 
 class Service {
+    
+    // MARK: Constants and flags
     fileprivate let sampleUser = "wwe"
     fileprivate let samplePass = "wwe"
     fileprivate var loggedIn = false
+    fileprivate let endpointURL = "http://www.wwe.com/feeds/sapphire/videos/all/all/0,20"
     
-    func fetchMovies(completion: ([VideoItem])->Void) {
-        Alamofire.request("http://www.wwe.com/feeds/sapphire/videos/all/all/0,20").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
+    // MARK: connection to server
+    func fetchMovies(completion: @escaping ([VideoItem]?)->Void) {
+        Alamofire.request(endpointURL).responseJSON { response in
             if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+                if let responseDict = json as? [String:Any] {
+                    completion(Parser.doYaThing(withDictionary: responseDict))
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
             }
         }
     }
     
+    // MARK: Login methods
     func isLoggedIn() -> Bool {
         return loggedIn
     }

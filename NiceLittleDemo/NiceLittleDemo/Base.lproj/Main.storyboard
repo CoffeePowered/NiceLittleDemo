@@ -104,41 +104,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLb-rA-hnQ">
-                                <rect key="frame" x="16" y="20" width="288" height="548"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="205" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLb-rA-hnQ">
+                                <rect key="frame" x="16" y="70" width="288" height="498"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="170" id="z3j-uH-TQo" customClass="VideoCellTableViewCell" customModule="NiceLittleDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="288" height="170"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="205" id="z3j-uH-TQo" customClass="VideoCellTableViewCell" customModule="NiceLittleDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z3j-uH-TQo" id="T70-Es-PSR">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="169.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBI-U8-oQJ">
-                                                    <rect key="frame" x="24" y="24" width="240" height="140"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="16" y="16" width="256" height="180"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vlb-VS-Nqp">
+                                                            <rect key="frame" x="107" y="18" width="133" height="102"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.82151648116438358" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="BkJ-IF-oWK"/>
+                                                        <constraint firstAttribute="height" constant="180" id="BkJ-IF-oWK"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="leading" secondItem="T70-Es-PSR" secondAttribute="leadingMargin" constant="16" id="nOH-dj-aYG"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="OBI-U8-oQJ" secondAttribute="trailing" constant="16" id="vE0-Zc-uYC"/>
-                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="top" secondItem="T70-Es-PSR" secondAttribute="topMargin" constant="16" id="yOQ-sI-2IK"/>
+                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="leading" secondItem="T70-Es-PSR" secondAttribute="leadingMargin" constant="8" id="nOH-dj-aYG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OBI-U8-oQJ" secondAttribute="trailing" constant="8" id="vE0-Zc-uYC"/>
+                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="top" secondItem="T70-Es-PSR" secondAttribute="topMargin" constant="8" id="yOQ-sI-2IK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="innerView" destination="OBI-U8-oQJ" id="PBF-vi-XS8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wwe_logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="fsz-z1-HsK">
+                                <rect key="frame" x="135.5" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="69d-up-gt6"/>
+                                    <constraint firstAttribute="height" constant="50" id="EkN-yA-Ipw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="zdB-FF-bzA" firstAttribute="top" secondItem="DLb-rA-hnQ" secondAttribute="bottom" id="PzR-Lf-ckc"/>
-                            <constraint firstItem="DLb-rA-hnQ" firstAttribute="top" secondItem="MqS-aU-HYf" secondAttribute="bottom" id="f32-cm-F9h"/>
+                            <constraint firstItem="DLb-rA-hnQ" firstAttribute="top" secondItem="fsz-z1-HsK" secondAttribute="bottom" id="b2q-Xz-dB8"/>
+                            <constraint firstItem="fsz-z1-HsK" firstAttribute="top" secondItem="MqS-aU-HYf" secondAttribute="bottom" id="qKA-J9-quB"/>
                             <constraint firstItem="DLb-rA-hnQ" firstAttribute="trailing" secondItem="FON-Wj-KQn" secondAttribute="trailingMargin" id="umA-n2-pDp"/>
+                            <constraint firstItem="fsz-z1-HsK" firstAttribute="centerX" secondItem="FON-Wj-KQn" secondAttribute="centerX" id="x1A-xF-rZ5"/>
                             <constraint firstItem="DLb-rA-hnQ" firstAttribute="leading" secondItem="FON-Wj-KQn" secondAttribute="leadingMargin" id="xZJ-bN-Er8"/>
                         </constraints>
                     </view>
@@ -169,4 +187,7 @@
             <point key="canvasLocation" x="37.5" y="713.02816901408448"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wwe_logo_black" width="225" height="225"/>
+    </resources>
 </document>

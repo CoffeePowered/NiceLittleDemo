@@ -15,7 +15,7 @@ struct VideoTag {
 }
 
 struct VideoItem {
-    var videoID : String?
+    var videoID : Int?
     var title: String?
     var dateTimestamp: Int?
     var duration: Int?

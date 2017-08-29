@@ -13,19 +13,41 @@ class VideosTableViewController: UIViewController {
     public var service: Service?
     @IBOutlet weak var tableView: UITableView!
     
+    var videos : [VideoItem] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
-        if let service = service {
-            service.fetchMovies(completion: {result in })
-        } else {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        fetchVideosFromService()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func fetchVideosFromService() {
+        tableView.alpha = 0
+        if let service = service {
+            service.fetchMovies(completion: {result in
+                if let videos = result {
+                    self.videos = videos
+                    self.tableView.reloadData()
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self.tableView.alpha = 1
+                    })
+                } else {
+                    self.serviceError()
+                }
+            })
+        } else {
+            serviceError()
+        }
+    }
+    
+    func serviceError() {
+        
     }
 }
 
@@ -38,7 +60,7 @@ extension VideosTableViewController: UITableViewDelegate {
 
 extension VideosTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

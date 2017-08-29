@@ -22,8 +22,31 @@ class NiceLittleDemoTests: XCTestCase {
     }
     
     func testParser() {
-        //let mockJSON = loadJSONFromFile(named: "VideosResponse")
-        //print(mockJSON)
+        if let path = Bundle.main.path(forResource: "VideosResponse", ofType: "json")
+        {
+            do {
+            let jsonData = try NSData(contentsOfFile: path, options: .mappedIfSafe)
+            
+                if let jsonResult: [String:Any] = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any]
+                {
+                    let videos = Parser.doYaThing(withDictionary: jsonResult)
+                    print("parsed mock response")
+                    XCTAssert(videos.count == 18, "The count of parsed videos must be 18")
+                    if let firstVideo = videos.first {
+                        if let firstTitle = firstVideo.title {
+                            XCTAssert(firstTitle == "Join WWE Superstars in helping those affected by Hurricane Harvey", "The parsed title of the first video does not match the expected value")
+                        } else {
+                            XCTAssert(false, "The parsed title of the first video should not be nil")
+                        }
+                    } else {
+                        XCTAssert(false, "The parsed response does not even have one video!")
+                    }
+                    
+                }
+            }
+            catch {
+            }
+        }
     }
     
     func testPerformanceExample() {
