@@ -14,7 +14,7 @@ class Service {
     fileprivate let samplePass = "wwe"
     fileprivate var loggedIn = false
     
-    func fetchMovies() {
+    func fetchMovies(completion: ([VideoItem])->Void) {
         Alamofire.request("http://www.wwe.com/feeds/sapphire/videos/all/all/0,20").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response

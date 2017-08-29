@@ -39,17 +39,25 @@ class LoginViewController: UIViewController {
     }
     
     func loginFailed() {
-        let alertController = UIAlertController(title: "Login Failed", message: "The user name or password you entered is not correct", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default) { action in
-        }
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion: nil)
+        presentAlert(withTitle: "Login Failed", andMessage: "The user name or password you entered is not correct")
     }
     
     func loginSucceeded() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let videosVC = storyboard.instantiateViewController(withIdentifier: "VideosTableViewController")
-        self.navigationController?.present(videosVC, animated: true, completion: nil)
+        if let videosVC = storyboard.instantiateViewController(withIdentifier: "VideosTableViewController") as? VideosTableViewController {
+            videosVC.service = service
+            self.navigationController?.present(videosVC, animated: true, completion: nil)
+        } else {
+            presentAlert(withTitle: "Error", andMessage: "Whoops, something went awfully wrong")
+        }
+    }
+    
+    func presentAlert(withTitle title: String, andMessage message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     

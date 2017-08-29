@@ -104,23 +104,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLb-rA-hnQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLb-rA-hnQ">
                                 <rect key="frame" x="16" y="20" width="288" height="548"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="152" id="z3j-uH-TQo" customClass="VideoCellTableViewCell" customModule="NiceLittleDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="288" height="152"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="170" id="z3j-uH-TQo" customClass="VideoCellTableViewCell" customModule="NiceLittleDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z3j-uH-TQo" id="T70-Es-PSR">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBI-U8-oQJ">
+                                                    <rect key="frame" x="24" y="24" width="240" height="140"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="BkJ-IF-oWK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="leading" secondItem="T70-Es-PSR" secondAttribute="leadingMargin" constant="16" id="nOH-dj-aYG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OBI-U8-oQJ" secondAttribute="trailing" constant="16" id="vE0-Zc-uYC"/>
+                                                <constraint firstItem="OBI-U8-oQJ" firstAttribute="top" secondItem="T70-Es-PSR" secondAttribute="topMargin" constant="16" id="yOQ-sI-2IK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="zdB-FF-bzA" firstAttribute="top" secondItem="DLb-rA-hnQ" secondAttribute="bottom" id="PzR-Lf-ckc"/>
                             <constraint firstItem="DLb-rA-hnQ" firstAttribute="top" secondItem="MqS-aU-HYf" secondAttribute="bottom" id="f32-cm-F9h"/>

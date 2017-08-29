@@ -17,6 +17,11 @@ class VideosTableViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        if let service = service {
+            service.fetchMovies(completion: {result in })
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
