@@ -64,7 +64,8 @@ extension VideosTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCellTableViewCell
+        cell.configure(withVideoItem: videos[indexPath.row])
+        return cell
     }
 }
