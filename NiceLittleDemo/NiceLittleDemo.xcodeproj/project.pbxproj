@@ -11,7 +11,7 @@
 		72E56A6B177592D00ABEFDE6 /* Pods_NiceLittleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0A9BA6C8DF5616E6724AFF /* Pods_NiceLittleDemo.framework */; };
 		C8A6A1382CAEC15C8D3F9E6D /* Pods_NiceLittleDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF911AF41C640CCC14BFA1B7 /* Pods_NiceLittleDemoTests.framework */; };
 		CE81EBF51F55111C009655E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EBF41F55111C009655E3 /* AppDelegate.swift */; };
-		CE81EBF71F55111C009655E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EBF61F55111C009655E3 /* ViewController.swift */; };
+		CE81EBF71F55111C009655E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EBF61F55111C009655E3 /* LoginViewController.swift */; };
 		CE81EBFA1F55111C009655E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE81EBF81F55111C009655E3 /* Main.storyboard */; };
 		CE81EBFC1F55111C009655E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81EBFB1F55111C009655E3 /* Assets.xcassets */; };
 		CE81EBFF1F55111C009655E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE81EBFD1F55111C009655E3 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,11 @@
 		CE81EC151F55111C009655E3 /* NiceLittleDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC141F55111C009655E3 /* NiceLittleDemoUITests.swift */; };
 		CE81EC241F5512B4009655E3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC231F5512B4009655E3 /* Parser.swift */; };
 		CE81EC271F5515EC009655E3 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC261F5515EC009655E3 /* VideoItem.swift */; };
+		CE81EC291F559D4A009655E3 /* VideosResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CE81EC281F559D4A009655E3 /* VideosResponse.json */; };
+		CE81EC2A1F55A33D009655E3 /* VideosResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CE81EC281F559D4A009655E3 /* VideosResponse.json */; };
+		CE81EC2C1F55A686009655E3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC2B1F55A686009655E3 /* Service.swift */; };
+		CE81EC331F55B9E6009655E3 /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC321F55B9E6009655E3 /* VideosTableViewController.swift */; };
+		CE81EC351F55C01B009655E3 /* VideoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC341F55C01B009655E3 /* VideoCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +53,7 @@
 		CE18558DD73E7477FBD8C9BC /* Pods-NiceLittleDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceLittleDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceLittleDemo/Pods-NiceLittleDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		CE81EBF11F55111C009655E3 /* NiceLittleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceLittleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE81EBF41F55111C009655E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE81EBF61F55111C009655E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE81EBF61F55111C009655E3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE81EBF91F55111C009655E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE81EBFB1F55111C009655E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE81EBFE1F55111C009655E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +66,10 @@
 		CE81EC161F55111C009655E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE81EC231F5512B4009655E3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Service/Parser.swift; sourceTree = "<group>"; };
 		CE81EC261F5515EC009655E3 /* VideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoItem.swift; path = Model/VideoItem.swift; sourceTree = "<group>"; };
+		CE81EC281F559D4A009655E3 /* VideosResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VideosResponse.json; sourceTree = "<group>"; };
+		CE81EC2B1F55A686009655E3 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Service/Service.swift; sourceTree = "<group>"; };
+		CE81EC321F55B9E6009655E3 /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosTableViewController.swift; path = Views/VideosTableViewController.swift; sourceTree = "<group>"; };
+		CE81EC341F55C01B009655E3 /* VideoCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCellTableViewCell.swift; path = Views/VideoCellTableViewCell.swift; sourceTree = "<group>"; };
 		EBF6B43B5985D10E80CAB9D2 /* Pods-NiceLittleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceLittleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceLittleDemoUITests/Pods-NiceLittleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF911AF41C640CCC14BFA1B7 /* Pods_NiceLittleDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiceLittleDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,11 +127,10 @@
 		CE81EBF31F55111C009655E3 /* NiceLittleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE81EC2F1F55ACC0009655E3 /* Views */,
 				CE81EC251F5515D0009655E3 /* Model */,
 				CE81EC221F55129D009655E3 /* Service */,
 				CE81EBF41F55111C009655E3 /* AppDelegate.swift */,
-				CE81EBF61F55111C009655E3 /* ViewController.swift */,
-				CE81EBF81F55111C009655E3 /* Main.storyboard */,
 				CE81EBFB1F55111C009655E3 /* Assets.xcassets */,
 				CE81EBFD1F55111C009655E3 /* LaunchScreen.storyboard */,
 				CE81EC001F55111C009655E3 /* Info.plist */,
@@ -135,6 +143,7 @@
 			children = (
 				CE81EC091F55111C009655E3 /* NiceLittleDemoTests.swift */,
 				CE81EC0B1F55111C009655E3 /* Info.plist */,
+				CE81EC281F559D4A009655E3 /* VideosResponse.json */,
 			);
 			path = NiceLittleDemoTests;
 			sourceTree = "<group>";
@@ -152,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CE81EC231F5512B4009655E3 /* Parser.swift */,
+				CE81EC2B1F55A686009655E3 /* Service.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -162,6 +172,17 @@
 				CE81EC261F5515EC009655E3 /* VideoItem.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		CE81EC2F1F55ACC0009655E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE81EBF81F55111C009655E3 /* Main.storyboard */,
+				CE81EBF61F55111C009655E3 /* LoginViewController.swift */,
+				CE81EC321F55B9E6009655E3 /* VideosTableViewController.swift */,
+				CE81EC341F55C01B009655E3 /* VideoCellTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E5CC4A66D82EBB38200593DD /* Pods */ = {
@@ -306,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE81EC2A1F55A33D009655E3 /* VideosResponse.json in Resources */,
 				CE81EBFF1F55111C009655E3 /* LaunchScreen.storyboard in Resources */,
 				CE81EBFC1F55111C009655E3 /* Assets.xcassets in Resources */,
 				CE81EBFA1F55111C009655E3 /* Main.storyboard in Resources */,
@@ -316,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE81EC291F559D4A009655E3 /* VideosResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,8 +494,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE81EBF71F55111C009655E3 /* ViewController.swift in Sources */,
+				CE81EBF71F55111C009655E3 /* LoginViewController.swift in Sources */,
+				CE81EC351F55C01B009655E3 /* VideoCellTableViewCell.swift in Sources */,
 				CE81EC271F5515EC009655E3 /* VideoItem.swift in Sources */,
+				CE81EC2C1F55A686009655E3 /* Service.swift in Sources */,
+				CE81EC331F55B9E6009655E3 /* VideosTableViewController.swift in Sources */,
 				CE81EC241F5512B4009655E3 /* Parser.swift in Sources */,
 				CE81EBF51F55111C009655E3 /* AppDelegate.swift in Sources */,
 			);

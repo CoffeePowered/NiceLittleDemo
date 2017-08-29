@@ -21,9 +21,9 @@ class NiceLittleDemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testParser() {
+        //let mockJSON = loadJSONFromFile(named: "VideosResponse")
+        //print(mockJSON)
     }
     
     func testPerformanceExample() {
@@ -31,6 +31,18 @@ class NiceLittleDemoTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    private func loadJSONFromFile(named: String) -> String? {
+        var result : String?
+        if let jsonURL = Bundle.main.url(forResource: named, withExtension: "json")
+        {
+            do {
+                let jsonData = try Data(contentsOf: jsonURL, options: .mappedIfSafe)
+                result = String(data: jsonData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            } catch {}
+        }
+        return result
     }
     
 }
