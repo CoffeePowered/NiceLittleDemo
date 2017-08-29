@@ -18,6 +18,7 @@
 		CE81EC0A1F55111C009655E3 /* NiceLittleDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC091F55111C009655E3 /* NiceLittleDemoTests.swift */; };
 		CE81EC151F55111C009655E3 /* NiceLittleDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC141F55111C009655E3 /* NiceLittleDemoUITests.swift */; };
 		CE81EC241F5512B4009655E3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC231F5512B4009655E3 /* Parser.swift */; };
+		CE81EC271F5515EC009655E3 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81EC261F5515EC009655E3 /* VideoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		CE81EC141F55111C009655E3 /* NiceLittleDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceLittleDemoUITests.swift; sourceTree = "<group>"; };
 		CE81EC161F55111C009655E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE81EC231F5512B4009655E3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Service/Parser.swift; sourceTree = "<group>"; };
+		CE81EC261F5515EC009655E3 /* VideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoItem.swift; path = Model/VideoItem.swift; sourceTree = "<group>"; };
 		EBF6B43B5985D10E80CAB9D2 /* Pods-NiceLittleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceLittleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceLittleDemoUITests/Pods-NiceLittleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF911AF41C640CCC14BFA1B7 /* Pods_NiceLittleDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiceLittleDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		CE81EBF31F55111C009655E3 /* NiceLittleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE81EC251F5515D0009655E3 /* Model */,
 				CE81EC221F55129D009655E3 /* Service */,
 				CE81EBF41F55111C009655E3 /* AppDelegate.swift */,
 				CE81EBF61F55111C009655E3 /* ViewController.swift */,
@@ -151,6 +154,14 @@
 				CE81EC231F5512B4009655E3 /* Parser.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		CE81EC251F5515D0009655E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE81EC261F5515EC009655E3 /* VideoItem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E5CC4A66D82EBB38200593DD /* Pods */ = {
@@ -461,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE81EBF71F55111C009655E3 /* ViewController.swift in Sources */,
+				CE81EC271F5515EC009655E3 /* VideoItem.swift in Sources */,
 				CE81EC241F5512B4009655E3 /* Parser.swift in Sources */,
 				CE81EBF51F55111C009655E3 /* AppDelegate.swift in Sources */,
 			);

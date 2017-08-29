@@ -10,5 +10,7 @@ import Foundation
 import Alamofire
 
 class Parser {
-    
+    static func doYaThing(withJSON data: String) -> [VideoItem] {
+        return []
+    }
 }
