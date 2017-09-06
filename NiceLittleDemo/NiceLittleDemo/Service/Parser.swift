@@ -9,8 +9,15 @@
 import Foundation
 import Alamofire
 
+/**
+    Parser: This class is responsible for translating the JSON from service to objects.
+            It is also responsible for making corrections to URLs and such.
+*/
+
 class Parser {
-    static func doYaThing(withDictionary json: [String:Any]) -> [VideoItem] {
+    static func doYaThing(withDictionary json: [String:Any],
+                          usingThumbnailBaseURL thumbnailBaseURL: String,
+                          andVideosBaseURL videosBaseURL: String) ->[VideoItem] {
         var result : [VideoItem] = []
         if let videosArray = json["videos"] as? [Any] {
             for videoElement in videosArray {
@@ -36,12 +43,18 @@ class Parser {
                                 }
                             }
                         }
-                        let videoItem = VideoItem(videoID: videoID, title: title, dateTimestamp: timestamp, duration: duration, playbackURL: playbackURL, thumbnailURL: thumbnail, body: body, landingURL: landingURL, tags: tags)
+                        let correctThumbURL = thumbnailBaseURL + Parser.applyCorrection(to: thumbnail)
+                        let videoItem = VideoItem(videoID: videoID, title: title, dateTimestamp: timestamp, duration: duration, playbackURL: videosBaseURL + playbackURL, thumbnailURL: correctThumbURL, body: body, landingURL: landingURL, tags: tags)
                         result.append(videoItem)
                     }
                 }
             }
         }
+        return result
+    }
+    
+    static func applyCorrection(to stringURL: String) -> String {
+        let result = stringURL.replacingOccurrences(of: "//", with: "/")
         return result
     }
 }

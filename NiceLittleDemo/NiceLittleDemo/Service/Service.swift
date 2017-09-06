@@ -9,6 +9,12 @@
 import Foundation
 import Alamofire
 
+
+/**
+        Service: This class is responsible for retrieving video items 
+                 from the web service, and also for authentication.
+ */
+
 class Service {
     
     // MARK: Constants and flags
@@ -16,13 +22,16 @@ class Service {
     fileprivate let samplePass = "wwe"
     fileprivate var loggedIn = false
     fileprivate let endpointURL = "http://www.wwe.com/feeds/sapphire/videos/all/all/0,20"
+    fileprivate let thumbnailBaseURL = "http://www.wwe.com"
     
     // MARK: connection to server
     func fetchMovies(completion: @escaping ([VideoItem]?)->Void) {
         Alamofire.request(endpointURL).responseJSON { response in
             if let json = response.result.value {
                 if let responseDict = json as? [String:Any] {
-                    completion(Parser.doYaThing(withDictionary: responseDict))
+                    completion(Parser.doYaThing(withDictionary: responseDict,
+                                                usingThumbnailBaseURL: self.thumbnailBaseURL,
+                                                andVideosBaseURL: "http:"))
                 } else {
                     completion(nil)
                 }

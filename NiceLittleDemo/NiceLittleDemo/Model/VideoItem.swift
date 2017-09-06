@@ -25,3 +25,9 @@ struct VideoItem {
     var landingURL: String?
     var tags: [VideoTag] = []
 }
+
+extension VideoItem: Equatable {
+    static func ==(lhs: VideoItem, rhs: VideoItem) -> Bool {
+        return lhs.videoID == rhs.videoID
+    }
+}

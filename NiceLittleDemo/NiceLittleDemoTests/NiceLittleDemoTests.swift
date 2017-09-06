@@ -29,7 +29,7 @@ class NiceLittleDemoTests: XCTestCase {
             
                 if let jsonResult: [String:Any] = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any]
                 {
-                    let videos = Parser.doYaThing(withDictionary: jsonResult)
+                    let videos = Parser.doYaThing(withDictionary: jsonResult, usingThumbnailBaseURL: "", andVideosBaseURL: "")
                     print("parsed mock response")
                     XCTAssert(videos.count == 18, "The count of parsed videos must be 18")
                     if let firstVideo = videos.first {
